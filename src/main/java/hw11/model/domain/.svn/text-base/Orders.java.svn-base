@@ -1,0 +1,104 @@
+package hw11.model.domain;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * Created with Intellij IDEA.
+ * Project name: proff16
+ * User: Partizanin
+ * Date: 22.07.2014
+ * Time: 11:17
+ * To change this template use File|Setting|File Templates.
+ */
+/*оформить заказ (дата, клиент, сумма, адрес подачи, адрес назначения)*/
+public class Orders {
+
+    private String date;
+
+    private Client client;
+
+    private double summ;
+
+    private String firstAdress;
+
+    private String lastAdress;
+
+    private Operator operator;
+
+
+    Orders(){
+
+    }
+
+
+    public Orders(String date, Client client, double summ, String firstAdress, String lastAdress, Operator operator) {
+        this.date = date;
+        this.client = client;
+        this.summ = summ;
+        this.firstAdress = firstAdress;
+        this.lastAdress = lastAdress;
+        this.operator = operator;
+    }
+
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
+    }
+
+    public double getSumm() {
+        return summ;
+    }
+
+    public void setSumm(double summ) {
+        this.summ = summ;
+    }
+
+    public String getFirstAdress() {
+        return firstAdress;
+    }
+
+    public void setFirstAdress(String firstAdress) {
+        this.firstAdress = firstAdress;
+    }
+
+    public String getLastAdress() {
+        return lastAdress;
+    }
+
+    public void setLastAdress(String lastAdress) {
+        this.lastAdress = lastAdress;
+    }
+
+    public Operator getOperator() {
+        return operator;
+    }
+
+    public void setOperator(Operator operator) {
+        this.operator = operator;
+    }
+
+    @Override
+    public String toString() {
+        return "Orders{" +
+                "date='" + date + '\'' +
+                ", client=" + client +
+                ", summ=" + summ +
+                ", firstAdress='" + firstAdress + '\'' +
+                ", lastAdress='" + lastAdress + '\'' +
+                ", operator=" + operator +
+                '}';
+    }
+}

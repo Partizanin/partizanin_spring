@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="partizanin_spring:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="partizanin_spring-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="partizanin_spring:war exploded" />
+    </root>
+  </artifact>
+</component>

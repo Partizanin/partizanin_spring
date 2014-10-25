@@ -1,0 +1,5 @@
+driver=oracle.jdbc.driver.OracleDriver
+url=jdbc:oracle:thin:@localhost:1521:XE
+username=notebooks
+password=notebooks
+connection.pool_size=1

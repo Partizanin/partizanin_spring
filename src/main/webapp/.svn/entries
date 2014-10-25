@@ -1,0 +1,56 @@
+10
+
+dir
+1074
+https://subversion.assembla.com/svn/proff6/trunk/partizanin_spring/src/main/webapp
+https://subversion.assembla.com/svn/proff6
+
+
+
+2014-07-24T08:14:31.838925Z
+990
+Partizanin
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+4b1c2f5a-432a-4f8a-84a1-d176d78b0f47
+
+
+
+
+
+
+0
+
+((conflict index.jsp file update added added (version https://subversion.assembla.com/svn/proff6 3 948 trunk/partizanin_spring/src/main/webapp/index.jsp none) (version https://subversion.assembla.com/svn/proff6 3 984 trunk/partizanin_spring/src/main/webapp/index.jsp file)))
+
+WEB-INF
+dir
+
+css
+dir
+
+hw11
+dir
+
+images
+dir
+
+index.jsp
+file
+0
+
+
+add
+

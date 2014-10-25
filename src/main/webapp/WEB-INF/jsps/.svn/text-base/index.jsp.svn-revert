@@ -1,0 +1,28 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@page session="false" %>
+<html>
+<head>
+    <title>Вход</title>
+    <link rel="stylesheet" type="text/css" href="../../css/style.css">
+</head>
+<body style="color: blue">
+<h2>Hello Web</h2>  <br/>
+<%--<jsp:include page="WEB-INF/jsps/userAdd.jsp"/>--%>
+
+<div class="radius">
+    <form action="/springHello" method="get">
+        <label>Login:</label>
+        <label>
+            <input type="text" name="login">
+        </label>
+        <br/>
+        <label>Password:</label>
+        <label>
+            <input type="text" name="pass">
+            <input type="submit" name="click" value="Add" width="14" height="100">
+        </label>
+    </form>
+</div>
+
+</body>
+</html>
