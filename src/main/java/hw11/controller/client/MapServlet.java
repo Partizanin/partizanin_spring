@@ -50,5 +50,3 @@ public class MapServlet extends HttpServlet {
 
     }
 }
-/*Error:fatal: No existing author found with 'Partizanin'
- during executing git commit --only -F */
