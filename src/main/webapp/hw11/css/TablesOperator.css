@@ -1,0 +1,143 @@
+body {
+    background: url("/images/backgroundImage.jpg") no-repeat fixed;
+}
+
+.rounded_edges {
+    border: 3px solid #61c4e8;
+
+}
+
+.inputLocation {
+
+    margin-left: 70px;
+    color: #8ccae7;
+    width: 100px;
+    height: 60px;
+    margin-top: 150px;
+    font-size: 20px;
+}
+
+.form-container {
+
+    background: url("/images/backgroundImage.jpg") no-repeat fixed;
+    margin-top: 100px;
+    margin-left: 300px;
+    border: 3px solid #61c4e8;
+    /*background: #c9b7a2;
+    background: -webkit-gradient(linear, left top, left bottom, from(#c7a27b), to(#c9b7a2));
+    background: -webkit-linear-gradient(top, #c7a27b, #c9b7a2);
+    background: -moz-linear-gradient(top, #c7a27b, #c9b7a2);
+    background: -ms-linear-gradient(top, #c7a27b, #c9b7a2);
+    background: -o-linear-gradient(top, #c7a27b, #c9b7a2);
+    background-image: -ms-linear-gradient(top, #c7a27b 0%, #c9b7a2 100%);*/
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    -webkit-box-shadow: rgba(000, 000, 000, 0.9) 0 1px 2px, inset rgba(255, 255, 255, 0.4) 0 0px 0;
+    -moz-box-shadow: rgba(000, 000, 000, 0.9) 0 1px 2px, inset rgba(255, 255, 255, 0.4) 0 0px 0;
+    box-shadow: rgba(000, 000, 000, 0.9) 0 1px 2px, inset rgba(255, 255, 255, 0.4) 0 0px 0;
+    font-family: 'Helvetica Neue', Helvetica, sans-serif;
+    text-decoration: none;
+    vertical-align: middle;
+    min-width: 700px;
+    padding: 20px;
+    width: 700px;
+}
+
+h2 {
+    font-size: 40px;
+}
+
+/*.form-field {
+    border: 0px solid #c9b7a2;
+    font-weight: bold;
+    background: #e4d5c3;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    color: #4da161;
+    -webkit-box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(000,000,000,0.7) 0 0px 0px;
+    -moz-box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(000,000,000,0.7) 0 0px 0px;
+    box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(000,000,000,0.7) 0 0px 0px;
+    padding:8px;
+    margin-bottom:20px;
+    width:280px;
+}*/
+
+.form-field:focus {
+    background: #fff;
+    color: #fff357
+}
+
+.form-container h2 {
+    text-shadow: #233014 0 1px 0;
+    font-size: 35px;
+    font-family: Arial, sans-serif, helvetica, serif;
+    margin: 0 0 10px 0;
+    font-weight: bold;
+    text-align: center;
+}
+
+.form-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #4da161;
+    text-shadow: #4da161 1px 0;
+}
+
+.submit-container {
+    margin: 8px 0;
+    text-align: right;
+}
+
+.submit-button:hover {
+    border: 2px solid #447314;
+    text-shadow: #233014 0 1px 0;
+    background: #cbdbbc;
+    background: -webkit-gradient(linear, left top, left bottom, from(#c0d9a5), to(#cbdbbc));
+    background: -webkit-linear-gradient(top, #c0d9a5, #cbdbbc);
+    background: -moz-linear-gradient(top, #c0d9a5, #cbdbbc);
+    background: -ms-linear-gradient(top, #c0d9a5, #cbdbbc);
+    background: -o-linear-gradient(top, #c0d9a5, #cbdbbc);
+    background-image: -ms-linear-gradient(top, #c0d9a5 0%, #cbdbbc 100%);
+    color: #3a5660;
+}
+
+/*D:\Illia\JAVA\Курсы\proff16\partizanin_spring\src\main\webapp\index2.jsp*/
+
+.submit-button:active {
+    text-shadow: #31540c 0 1px 0;
+    border: 2px solid #447314;
+    background: #8dc059;
+    background: -webkit-gradient(linear, left top, left bottom, from(#6aa436), to(#6aa436));
+    background: -webkit-linear-gradient(top, #6aa436, #8dc059);
+    background: -moz-linear-gradient(top, #6aa436, #8dc059);
+    background: -ms-linear-gradient(top, #6aa436, #8dc059);
+    background: -o-linear-gradient(top, #6aa436, #8dc059);
+    background-image: -ms-linear-gradient(top, #6aa436 0%, #8dc059 100%);
+    color: #3a5660;
+}
+
+.submit-button {
+    border: 2px solid #8ccae7;
+    background: #61c4e8;
+    background: -webkit-gradient(linear, left top, left bottom, from(#a2bda9), to(#61c4e8));
+    background: -webkit-linear-gradient(top, #a2bda9, #61c4e8);
+    background: -moz-linear-gradient(top, #a2bda9, #61c4e8);
+    background: -ms-linear-gradient(top, #a2bda9, #61c4e8);
+    background: -o-linear-gradient(top, #a2bda9, #61c4e8);
+    background-image: -ms-linear-gradient(top, #a2bda9 0%, #61c4e8 100%);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    /* -webkit-box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+     -moz-box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+     box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+     text-shadow: #addc7e 0 1px 0;*/
+    color: darkslategrey;
+    font-family: Tahoma, Arial, sans-serif, helvetica, serif;
+    padding: 8.5px 18px;
+    font-size: 16px;
+    text-decoration: none;
+    vertical-align: middle;
+}

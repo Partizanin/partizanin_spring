@@ -1,0 +1,20 @@
+body {
+    background-image: url("/images/backgroundImage.jpg");
+}
+
+h2:nth-child(1) {
+    color: greenyellow;
+    text-align: center;
+    font-family: vivaldi, serif;
+    font-size: 50px;
+
+}
+
+form {
+    text-align: center;
+    color: darkcyan;
+    font-family: vivaldi, serif;
+    font-size: 50px;
+
+}
+

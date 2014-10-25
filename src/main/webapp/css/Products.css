@@ -1,0 +1,24 @@
+body {
+    background: url("/images/backgroundImage.jpg");
+}
+
+img {
+    width: 220px;
+    height: 220px;
+    margin-left: 12px;
+}
+
+.border {
+    border: 12px groove darkcyan;
+}
+
+form {
+    margin-top: 100px;
+    display: inline-block;
+}
+
+p {
+    font-family: Monospaced, serif;
+    color: chartreuse;
+    font-size: 30px;
+}
