@@ -37,9 +37,9 @@ public class RegistrationServlet extends HttpServlet {
     private AdminService adminService;
     private OperatorService operatorService;
     private ClientService clientService;
-    private Utils.Operator operatorUtils;
-    private Utils.Client clientUtils;
-    private Utils.Admin adminUtils;
+    private Utils.Operator operatorUtils = new Utils.Operator();
+    private Utils.Client clientUtils = new Utils.Client();
+    private Utils.Admin adminUtils = new Utils.Admin();
 
     private List<Client> clients;
     private List<Operator> operators;
@@ -93,7 +93,7 @@ public class RegistrationServlet extends HttpServlet {
             String address = request.getParameter("address");
             String price = request.getParameter("price");
             String dateOfLastOrder = request.getParameter("dateOfLastOrder");
-            System.out.println(dateOfLastOrder);
+
 
             String result = registrationClient(name, surname, phoneNumber, address, price, dateOfLastOrder);
 
@@ -280,7 +280,7 @@ public class RegistrationServlet extends HttpServlet {
 
     }
 
-    private String registrationClient(String name, String surname, String phoneNumber, String address, String price, String date) {
+    public String registrationClient(String name, String surname, String phoneNumber, String address, String price, String date) {
 
         if (name == null || name.equals("")) {
 

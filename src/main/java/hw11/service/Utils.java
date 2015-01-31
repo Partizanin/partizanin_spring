@@ -13,7 +13,13 @@ import java.util.List;
  */
 public class Utils {
 
-    private String passCheck(String s) {
+    public static void main(String[] args) {
+        Utils.Operator operatorUtils = new Utils.Operator();
+
+        System.out.println(operatorUtils.idCheck("12"));
+    }
+
+    private static String passCheck(String s) {
 /*пароль и его подтверждение (должен быть не менее 8 символов,
  включать большие и маленькие буквы, цифры, должен совпадать с подтверждением)*/
         List<Character> alphabet = new ArrayList<>();
@@ -97,7 +103,7 @@ public class Utils {
         return "true";
     }
 
-    private String languageCheck(String line) {
+    private static String languageCheck(String line) {
 
         List<Character> chars = new ArrayList<>();
         List<Character> numbers = new ArrayList<>();
@@ -155,7 +161,7 @@ public class Utils {
         return "true";
     }
 
-    public class Client {
+    public static class Client {
 
         public String nameSurnameCheck(String s) {
             return languageCheck(s);
@@ -203,7 +209,7 @@ public class Utils {
 
     }
 
-    public class Admin {
+    public static class Admin {
 
         public String loginCheck(String s) {
 
@@ -215,7 +221,7 @@ public class Utils {
         }
     }
 
-    public class Operator {
+    public static class Operator {
 
         public String loginCheck(String s) {
 
