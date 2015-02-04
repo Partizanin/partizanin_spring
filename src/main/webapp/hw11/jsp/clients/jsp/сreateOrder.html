@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../../../../js/jquery-2.1.1.min.js"></script>
+</head>
+
+
+<!--$("label[id = value1]").text("UAH");-->
+<script>
+
+    window.onload = function () {
+        if (localStorage.getItem("flag")) {
+            document.getElementById("firstPoint").innerHTML = localStorage.getItem("startPoint");
+            document.getElementById("secondPoint").innerHTML = localStorage.getItem("finishPoint");
+            document.getElementById("distance").innerHTML = localStorage.getItem("distance");
+            document.getElementById("cost").innerHTML = localStorage.getItem("cost");
+        }
+        else {
+            document.getElementsByClassName("page").item(0).innerHTML += "Ошибочка";
+
+        }
+    };
+
+
+    function redirect() {
+        window.location.href = 'Yandexmap.html';
+    }
+
+    function sendToServer() {
+
+
+    }
+</script>
+<body>
+
+<h1>Начальная точка </h1> <label id="firstPoint"></label><br>
+
+<h1>Конечная точка </h1><label id="secondPoint"></label><br>
+
+<h1>Расстояние </h1><label id="distance"></label><br>
+
+<h1>Стоимость </h1><label id="cost"></label><br>
+
+<input type="button" value="Оформить Заказ">
+<input type="button" value="Составить новый маршрут" onclick="redirect()">
+</body>
+</html>
