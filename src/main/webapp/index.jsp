@@ -17,6 +17,7 @@
         <input style="width: 250px;" class="submit-button" type="submit" name="operator" value="Operator"/>
         <input style="width: 250px;" class="submit-button" type="submit" name="administrator" value="Administrator"/>
     </div>
+    <a href="hw11/jsp/clients/jsp/сreateOrder.html">create Order Page</a>
 </form>
 </body>
 </html>

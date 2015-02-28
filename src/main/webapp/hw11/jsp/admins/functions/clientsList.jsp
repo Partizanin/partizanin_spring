@@ -1,3 +1,4 @@
+<jsp:useBean id="client" scope="request" type="hw11.model.domain.Client"/>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%--
@@ -12,8 +13,8 @@
 <html>
 <head>
     <title>Show all clients</title>
-    <link rel="stylesheet" href="/hw11/css/TablesClient.css" type="text/css"/>
-    <link rel="shortcut icon" href="/images/favicon.ico" type="image/ico">
+    <link rel="stylesheet" href="<c:url value="/hw11/css/TablesClient.css"/>" type="text/css"/>
+    <link rel="shortcut icon" href="<c:url value="/images/favicon.ico"/>" type="image/ico">
 
 </head>
 <body>
@@ -23,7 +24,7 @@
         messeg = (String) request.getAttribute("message");
     }
 %>
-<form class="form-container" action="/ClientTable" method="post">
+<form class="form-container" action="<c:url value="/ClientTable"/>" method="post">
     <table border="1" width="50%" class="rounded_edges" align="center">
         <div class="form-title"><h2 style="font-size: 40px">Client list</h2></div>
         <div>
@@ -36,6 +37,7 @@
             <th style="color: #ffa600">client_lastDate</th>
         </div>
         <tr></tr>
+        <jsp:useBean id="clientList" scope="request" type="java.util.List"/>
         <c:forEach var="client" items="${clientList}">
             <div>
                 <tr>
@@ -69,7 +71,8 @@
                        value="${client.getAddress()}"/>
             </label></td>
             <td><label>
-                <input style=" color:#ff6600; width: 100%" type="text" name="clientSumma" value="${client.getSumma()}"/>
+                <input style=" color:#ff6600; width: 100%" type="text" name="clientSumma"
+                       value="${client.getSumma()}"/>
             </label></td>
             <td><label>
                 <input style=" color:#ff007d; width: 100%" type="text" name="clientLastDate"
@@ -77,7 +80,6 @@
             </label></td>
             <tr></tr>
         </div>
-        </div  class="submit-container">
         <td colspan="2"><input class="submit-button" style="width: 100%" type="submit" name="action" value="Add"/></td>
         <td><input class="submit-button" style="width: 100%" type="submit" name="action" value="Edit"/></td>
         <td colspan="2"><input class="submit-button" style="width: 100%" type="submit" name="action" value="Delete"/>
@@ -87,12 +89,56 @@
         <tr></tr>
         <td colspan="7"><input class="submit-button" style="width: 100%;height: 50px" type="submit" name="action"
                                value="Return"/></td>
-        </div>
     </table>
     <h2 style="color: #ff0000; font-size: 15px;margin-left:10px;margin-bottom:10px"><%=messeg%>
     </h2>
     <%request.removeAttribute("message");%>
 
+    <script>
+        function search() {
+            var xmlhttp;
+            var clientnId = document.getElementsByName('clientnId').value;
+            var clientName = document.getElementsByName('clientName').value;
+            var clientSurname = document.getElementsByName('clientSurname').value;
+            var clientPhonenumber = document.getElementsByName('clientPhonenumber').value;
+            var clientAdress = document.getElementsByName('clientAdress').value;
+            var clientSumma = document.getElementsByName('clientSumma').value;
+            var clientLastDate = document.getElementsByName('clientLastDate').value;
+            if (window.XMLHttpRequest) {
+                // This part is mainly for the latest browsers which have XMLHttpRequest object
+                // like Chrome,Firefox,Safari and IE7+
+                xmlhttp = new XMLHttpRequest();
+            }
+            else {
+                // This should take care of the older browsers
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange = function () {
+                /*
+                 readyState has four different states :
+                 0: request not initialized
+                 1: server connection established
+                 2: request received
+                 3: processing request
+                 4: request finished and response is ready
+                 status is ranging between 200 - Ok and 404 - Page Not Found
+                 */
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    document.getElementById("result").value = (xmlhttp.responseText);
+
+                }
+            };
+            xmlhttp.open("GET", "ServletTest?clientnId=" + clientnId
+                    + "&clientName=" + clientName
+                    + "&clientSurname=" + clientSurname
+                    + "&clientPhonenumber=" + clientPhonenumber
+                    + "&clientAdress=" + clientAdress
+                    + "&clientSumma=" + clientSumma
+                    + "&clientLastDate=" + clientLastDate
+                    , true);
+            xmlhttp.send();
+        }
+    </script>
 
 </form>
 </body>

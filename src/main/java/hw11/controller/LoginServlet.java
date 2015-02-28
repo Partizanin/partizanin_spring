@@ -78,6 +78,8 @@ public class LoginServlet extends HttpServlet {
 
             String login = request.getParameter("loginAdmin");
             String password = request.getParameter("passwordAdmin");
+            log("Input login: " + login);
+            log("Input pass: " + password);
 
             if (login != null && !login.equals("") &&
                     password != null && !password.equals("")) {

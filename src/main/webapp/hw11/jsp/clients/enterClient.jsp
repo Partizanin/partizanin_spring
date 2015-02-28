@@ -3,7 +3,7 @@
 <html>
 <head>
     <title>Вход</title>
-    <link rel="stylesheet" href="/hw11/css/Login.css" type="text/css"/>
+    <link rel="stylesheet" href="../../css/Login.css" type="text/css"/>
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/ico">
 </head>
 

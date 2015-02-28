@@ -23,7 +23,7 @@
     <%request.removeAttribute("message");%>
     <div class="form-title">Login</div>
     <label>
-        <input class="form-field" placeholder="Вася" type="text" name="loginAdmin"/>
+        <input lang="us" class="form-field" placeholder="Вася" type="text" name="loginAdmin"/>
     </label><br/>
 
     <div class="form-title">Password</div>

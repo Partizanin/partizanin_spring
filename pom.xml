@@ -79,6 +79,12 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+        <!--Shiro autorization dependencies-->
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-spring</artifactId>
+            <version>1.2.3</version>
+        </dependency>
         <!-- Json dependencies -->
         <dependency>
             <groupId>org.json</groupId>
