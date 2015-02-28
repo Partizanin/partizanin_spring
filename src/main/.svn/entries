@@ -1,44 +1,0 @@
-10
-
-dir
-1074
-https://subversion.assembla.com/svn/proff6/trunk/partizanin_spring/src/main
-https://subversion.assembla.com/svn/proff6
-
-
-
-2014-07-24T08:40:07.597237Z
-991
-Partizanin
-
-
-svn:special svn:externals svn:needs-lock
-
-
-
-
-
-
-
-
-
-
-
-4b1c2f5a-432a-4f8a-84a1-d176d78b0f47
-
-
-
-
-
-
-0
-
-java
-dir
-
-resources
-dir
-
-webapp
-dir
-
