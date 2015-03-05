@@ -5,6 +5,8 @@ import hw11.service.admin.AdminService;
 import hw11.service.client.ClientService;
 import hw11.service.operator.OperatorService;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
@@ -18,7 +20,7 @@ import java.util.Locale;
 
 /**
  * Created with Intellij IDEA.
- * Project name: proff16
+ * Project name: partizanin_spring
  * User: Partizanin
  * Date: 22.07.2014
  * Time: 15:12
@@ -47,7 +49,7 @@ public class EnterServlet extends HttpServlet {
 
         doPost(request, response);
     }
-
+    @RequestMapping(value = { "/", "/welcome**" }, method = {RequestMethod.GET,RequestMethod.HEAD})
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -64,23 +66,6 @@ public class EnterServlet extends HttpServlet {
 
             request.getRequestDispatcher("/hw11/jsp/admins/LoginAdministrator.jsp").forward(request, response);
 
-        } else if (request.getParameter("button").equals("Show Administrators List")) {
-            adminService = (AdminService) context.getBean("adminServiceImpl");
-            request.setAttribute("adminList", adminService.findAll());
-
-            request.getRequestDispatcher("/hw11/jsp/admins/functions/adminsList.jsp").forward(request, response);
-
-        } else if (request.getParameter("button").equals("Show Clients List")) {
-            clientService = (ClientService) context.getBean("clientServiceImpl");
-            request.setAttribute("clientList", clientService.findAll());
-
-            request.getRequestDispatcher("/hw11/jsp/admins/functions/clientsList.jsp").forward(request, response);
-
-        } else if (request.getParameter("button").equals("Show Operators List")) {
-            operatorService = (OperatorService) context.getBean("operatorServiceImpl");
-            request.setAttribute("operatorList", operatorService.findAll());
-
-            request.getRequestDispatcher("/hw11/jsp/admins/functions/operatorsList.jsp").forward(request, response);
         }
 
     }

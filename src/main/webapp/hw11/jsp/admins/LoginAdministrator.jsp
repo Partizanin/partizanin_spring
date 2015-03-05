@@ -23,7 +23,9 @@
     <%request.removeAttribute("message");%>
     <div class="form-title">Login</div>
     <label>
+        <sec:authorize access="!isAuthenticated()">
         <input lang="us" class="form-field" placeholder="Вася" type="text" name="loginAdmin"/>
+    </sec:authorize>
     </label><br/>
 
     <div class="form-title">Password</div>

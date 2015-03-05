@@ -5,7 +5,7 @@ import java.util.List;
 
 /**
  * Created with Intellij IDEA.
- * Project name: proff16
+ * Project name: partizanin_spring
  * User: Partizanin
  * Date: 24.09.2014
  * Time:  18:40

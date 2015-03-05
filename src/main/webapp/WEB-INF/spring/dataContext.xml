@@ -24,6 +24,7 @@ http://www.springframework.org/schema/tx
         <property name="url" value="${connection.url}"/>
         <property name="username" value="${connection.username}"/>
         <property name="password" value="${connection.password}"/>
+        <property name="poolPreparedStatements" value="${connection.pool_size}"/>
     </bean>
     <bean id="factory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
         <property name="dataSource" ref="myDataSource"/>
@@ -40,7 +41,7 @@ http://www.springframework.org/schema/tx
             <value>
                 hibernate.dialect=org.hibernate.dialect.Oracle10gDialect
                 hibernate.show_sql=true
-                hibernate.hbm2ddl.auto=update<!--create//update//create-drop-->
+                hibernate.hbm2ddl.auto=create<!--create//update//create-drop-->
                 current_session_context_class=thread
             </value>
         </property>
