@@ -1,4 +1,3 @@
-<jsp:useBean id="client" scope="request" type="hw11.model.domain.Client"/>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%--
