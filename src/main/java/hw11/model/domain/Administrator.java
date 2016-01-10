@@ -15,8 +15,7 @@ import java.io.Serializable;
 @Table(name = "Admins")
 public class Administrator implements Serializable {
 
-    @SequenceGenerator(name = "sequence", sequenceName = "seq_admin_id", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence")
+    
 
     @Id
     @Column(name = "admin_id")
