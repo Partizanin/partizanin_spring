@@ -12,7 +12,7 @@ http://www.springframework.org/schema/tx
 
     <context:component-scan base-package="hw11"/>
 
-    <context:property-placeholder location="classpath:confProduct.properties"/>
+    <context:property-placeholder location="classpath:confTaxi.properties"/>
 
     <bean id="myDataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="${connection.driver_class}"/>
@@ -31,7 +31,7 @@ http://www.springframework.org/schema/tx
         </property>
         <property name="hibernateProperties">
             <value>
-                hibernate.dialect=org.hibernate.dialect.Oracle10gDialect
+                hibernate.dialect=org.hibernate.dialect.MySQLDialect<!--Oracle10gDialect-->
                 hibernate.show_sql=true
                 hibernate.hbm2ddl.auto=create  <!-- validate | update | create | create-drop-->
                 current_session_context_class=thread

@@ -14,8 +14,7 @@ http://www.springframework.org/schema/tx
      <context:component-scan base-package="web" />
      <context:component-scan base-package="web.controller" />-->
     <context:component-scan base-package="hw11"/>
-    <context:component-scan base-package="hw11.controller"/>
-    <context:component-scan base-package="hw11.model.domain"/>
+
 
     <context:property-placeholder location="classpath:confTaxi.properties"/>
 
@@ -31,14 +30,14 @@ http://www.springframework.org/schema/tx
             <list>
                 <!--<value>web</value>
                 <value>web.domain</value>-->
+                <!--<value>hw11.model.domain</value>-->
                 <value>hw11</value>
-                <value>hw11.model.domain</value>
 
             </list>
         </property>
         <property name="hibernateProperties">
             <value>
-                hibernate.dialect=org.hibernate.dialect.Oracle10gDialect
+                hibernate.dialect=org.hibernate.dialect.MySQLDialect
                 hibernate.show_sql=true
                 hibernate.hbm2ddl.auto=update<!--create//update//create-drop-->
                 current_session_context_class=thread
