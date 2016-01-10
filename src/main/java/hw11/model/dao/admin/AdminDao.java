@@ -22,5 +22,5 @@ public interface AdminDao {
 
     void delete(Administrator administrator);
 
-    List<Administrator> findAll();
+    List findAll();
 }
