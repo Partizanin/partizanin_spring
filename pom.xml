@@ -79,12 +79,6 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
-        <!--Shiro autorization dependencies-->
-        <dependency>
-            <groupId>org.apache.shiro</groupId>
-            <artifactId>shiro-spring</artifactId>
-            <version>1.2.3</version>
-        </dependency>
         <!-- Json dependencies -->
         <dependency>
             <groupId>org.json</groupId>
@@ -153,19 +147,6 @@
                 </exclusion>
             </exclusions>
         </dependency>
-
-        <!-- Hibernate session16.annotation -->
-        <!--        <dependency>
-                    <groupId>org.hibernate</groupId>
-                    <artifactId>hibernate-annotations</artifactId>
-                    <version>${hibernate.version}</version>
-                    <exclusions>
-                        <exclusion>
-                            <artifactId>slf4j-api</artifactId>
-                            <groupId>org.slf4j</groupId>
-                        </exclusion>
-                    </exclusions>
-                </dependency>-->
 
         <dependency>
             <groupId>org.hibernate</groupId>

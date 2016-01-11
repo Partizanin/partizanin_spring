@@ -18,6 +18,7 @@
         <input style="width: 250px;" class="submit-button" type="submit" name="administrator" value="Administrator"/>
     </div>
     <a href="hw11/jsp/clients/jsp/сreateOrder.html">create Order Page</a>
+    <a href="hw11/jsp/clients/jsp/Yandexmap.html">Ynadex Map</a>
 </form>
 </body>
 </html>

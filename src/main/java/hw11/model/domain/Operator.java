@@ -14,8 +14,7 @@ import javax.persistence.*;
 @Table(name = "Operators")
 public class Operator {
 
-    @SequenceGenerator(name = "sequence", sequenceName = "seq_operator_id", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence")
+
 
     @Id
     @Column(name = "operator_id")
