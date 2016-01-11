@@ -185,6 +185,7 @@
         }, this);
 
     };
+    var routDAta;
     ptp.calculate = function (len) {
         // Константы.
         var DELIVERY_TARIF = 2.6,
@@ -226,13 +227,12 @@
 
     function redirect(start, finish, distance, cost) {
 
-        var myURL = "http://localhost:8080/hw11/jsp/clients/jsp/сreateOrder.html";
         localStorage.setItem("flag", true);
         localStorage.setItem("startPoint", start);
         localStorage.setItem("finishPoint", finish);
         localStorage.setItem("distance", distance);
         localStorage.setItem("cost", cost);
-        window.location.href = (myURL);
+        window.location.href = ("http://localhost:8080/hw11/jsp/clients/jsp/сreateOrder.html");
 
     }
 

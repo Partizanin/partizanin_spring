@@ -7,15 +7,18 @@
 </head>
 
 
-<!--$("label[id = value1]").text("UAH");-->
 <script>
-
+    var storageDAta = {};
     window.onload = function () {
         if (localStorage.getItem("flag")) {
-            document.getElementById("firstPoint").innerHTML = localStorage.getItem("startPoint");
-            document.getElementById("secondPoint").innerHTML = localStorage.getItem("finishPoint");
-            document.getElementById("distance").innerHTML = localStorage.getItem("distance");
-            document.getElementById("cost").innerHTML = localStorage.getItem("cost");
+            storageDAta.startPoint = localStorage.getItem("startPoint");
+            storageDAta.finishPoint = localStorage.getItem("finishPoint");
+            storageDAta.distance = localStorage.getItem("distance");
+            storageDAta.cost = localStorage.getItem("cost");
+            document.getElementById("startPoint").innerHTML = storageDAta.startPoint;
+            document.getElementById("finishPoint").innerHTML = storageDAta.finishPoint;
+            document.getElementById("distance").innerHTML = storageDAta.distance;
+            document.getElementById("cost").innerHTML = storageDAta.cost + " грн.";
         }
         else {
             document.getElementsByClassName("page").item(0).innerHTML += "Ошибочка";
@@ -28,22 +31,66 @@
         window.location.href = 'Yandexmap.html';
     }
 
+    function callToServer(request) {
+        var myData = {"operationCall": request};
+        var defer = $.Deferred();
+        $.ajax({
+            type: "GET",
+            url: "/MapServlet",
+            data: {jsonData: JSON.stringify(myData)},
+            contentType:"application/json; charset=utf-8",
+            dataType: "json",
+
+            //if received a response from the server
+            success: function (jsonData) {
+                console.log("transfer success");
+            },
+
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log(textStatus, errorThrown);
+            },
+
+            complete: function () {
+
+            }
+
+        }).done(function (data) {
+            defer.resolve(data);
+        }).fail(function (xhr, status, errorThrown) {
+            alert("Sorry, there was a problem!");
+            console.log("Error: " + errorThrown);
+            console.log("Status: " + status);
+            console.dir(xhr);
+        });
+
+        return defer.promise();
+    }
+
     function sendToServer() {
 
+        console.log("send to server");
+
+
+        callToServer(storageDAta).then(function(data) {
+            $.each(data, function( key, value ) {
+                console.log( key + ": " + value );
+            });
+
+        });
 
     }
 </script>
 <body>
 
-<h1>Начальная точка </h1> <label id="firstPoint"></label><br>
+<h1>Начальная точка </h1> <label id="startPoint"></label><br>
 
-<h1>Конечная точка </h1><label id="secondPoint"></label><br>
+<h1>Конечная точка </h1><label id="finishPoint"></label><br>
 
 <h1>Расстояние </h1><label id="distance"></label><br>
 
 <h1>Стоимость </h1><label id="cost"></label><br>
 
-<input type="button" value="Оформить Заказ">
+<input type="button" value="Оформить Заказ" onclick="sendToServer()">
 <input type="button" value="Составить новый маршрут" onclick="redirect()">
 </body>
 </html>

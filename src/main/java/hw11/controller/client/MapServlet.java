@@ -14,7 +14,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -56,35 +55,36 @@ public class MapServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        System.out.println(LocalTime.now() + " hello from servlet");
-        String site = "hw11/jsp/clients/jsp/сreateOrder.html";
-
-
+        response.setContentType("text/plain; charset=utf-8");
+        response.setCharacterEncoding("UTF-8");
         PrintWriter writer = response.getWriter();
 
-        JSONObject catchObject = new JSONObject();
 
-        String distance = "";
-        String cost = "";
-        String start = "";
-        String finish = "";
+        JSONObject catchObject = new JSONObject();
+        JSONObject sendObject = new JSONObject();
+        JSONObject requestValue = new JSONObject();
+        String cost = "", distance = "", startPoint = "", finishPoint = "";
+
 
         try {
-            catchObject = new JSONObject(request.getParameter("json_string"));
-            distance = String.valueOf(catchObject.get("distance"));
-            cost = String.valueOf(catchObject.get("cost"));
-            start = String.valueOf(catchObject.get("start"));
-            finish = String.valueOf(catchObject.get("finish"));
+            catchObject = new JSONObject(request.getParameter("jsonData"));
+            requestValue = catchObject.getJSONObject("operationCall");
+            cost = requestValue.getString("cost");
+            distance = requestValue.getString("distance");
+            startPoint = requestValue.getString("startPoint");
+            finishPoint = requestValue.getString("finishPoint");
+            sendObject.accumulate("requestStatus", "Success");
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
+
+        writer.println(sendObject);
+        writer.flush();
         /*method which takes the value from page and redirect to another page */
         System.out.println(distance + "\n " +
                 "" + cost + "\n" +
-                "" + start + "\n" +
-                "" + finish + "\n");
-
-        response.sendRedirect("hw11/jsp/clients/jsp/сreateOrder.html");
+                "" + startPoint + "\n" +
+                "" + finishPoint + "\n");
     }
 }
