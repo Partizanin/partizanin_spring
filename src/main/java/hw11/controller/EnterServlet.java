@@ -52,8 +52,8 @@ public class EnterServlet extends HttpServlet {
     @RequestMapping(value = { "/", "/welcome**" }, method = {RequestMethod.GET,RequestMethod.HEAD})
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-
+        request.setCharacterEncoding("UTF-8");
+/*todo fix bag with admin control panel entering*/
         if (request.getParameter("client") != null) {
 
             request.getRequestDispatcher("/hw11/jsp/clients/LoginClient.jsp").forward(request, response);
@@ -65,6 +65,18 @@ public class EnterServlet extends HttpServlet {
         } else if (request.getParameter("administrator") != null) {
 
             request.getRequestDispatcher("/hw11/jsp/admins/LoginAdministrator.jsp").forward(request, response);
+
+        } else if (request.getParameter("Show Clients List") != null) {
+
+            request.getRequestDispatcher("/hw11/jsp/admins/functions/clientsList.jsp").forward(request, response);
+
+        }else if (request.getParameter("Show Operators List") != null) {
+
+            request.getRequestDispatcher("/hw11/jsp/admins/functions/operatorsList.jsp").forward(request, response);
+
+        }else if (request.getParameter("Show Administrators List") != null) {
+
+            request.getRequestDispatcher("/hw11/jsp/admins/functions/adminsList.jsp").forward(request, response);
 
         }
 

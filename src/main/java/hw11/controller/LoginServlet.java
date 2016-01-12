@@ -58,7 +58,7 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        request.setCharacterEncoding("UTF-8");
         if (request.getParameter("registrationClient") != null) {
 
             request.getRequestDispatcher("/hw11/jsp/clients/RegistrationClient.jsp").forward(request, response);
@@ -90,12 +90,6 @@ public class LoginServlet extends HttpServlet {
                     if (login.equals(anAdminList.getLogin()) && password.equals(anAdminList.getPassword())) {
                         loginBoolean = true;
                         request.getRequestDispatcher("/hw11/jsp/admins/enterAdmin.jsp").forward(request, response);
-                    } else if (!login.equals(anAdminList.getLogin()) && password.equals(anAdminList.getPassword())) {
-                        request.setAttribute("message", "Please input correct login!!");
-                        request.getRequestDispatcher("/hw11/jsp/admins/LoginAdministrator.jsp").forward(request, response);
-                    } else if (!password.equals(anAdminList.getPassword()) && login.equals(anAdminList.getLogin())) {
-                        request.setAttribute("message", "Please input correct password!!");
-                        request.getRequestDispatcher("/hw11/jsp/admins/LoginAdministrator.jsp").forward(request, response);
                     }
                 }
 
@@ -159,14 +153,6 @@ public class LoginServlet extends HttpServlet {
                     if (login.equals(operator.getLogin()) && password.equals(operator.getPassword())) {
                         loginBoolean = true;
                         request.getRequestDispatcher("/hw11/jsp/loginSuccessful.jsp").forward(request, response);
-                    } else if (!login.equals(operator.getLogin()) && password.equals(operator.getPassword())) {
-
-                        request.setAttribute("message", "Please input correct login!!");
-                        request.getRequestDispatcher("/hw11/jsp/operators/LoginOperator.jsp").forward(request, response);
-
-                    } else if (login.equals(operator.getLogin()) && !password.equals(operator.getPassword())) {
-                        request.setAttribute("message", "Please input correct password!!");
-                        request.getRequestDispatcher("/hw11/jsp/operators/LoginOperator.jsp").forward(request, response);
                     }
                 }
 

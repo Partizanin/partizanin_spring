@@ -16,7 +16,7 @@ public class Operator {
 
 
 
-    @Id
+    @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "operator_id")
     private Long id;
 

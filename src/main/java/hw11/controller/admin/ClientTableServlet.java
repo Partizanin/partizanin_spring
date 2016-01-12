@@ -51,7 +51,7 @@ public class ClientTableServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-
+        request.setCharacterEncoding("UTF-8");
         clientService = (ClientService) context.getBean("clientServiceImpl");
         clients = clientService.findAll();
 
@@ -299,20 +299,21 @@ public class ClientTableServlet extends HttpServlet {
             }
         }
 
-        if (!wasFiend) {
-            long id = 0;
-            int i = 0;
-
-
-            for (int j = 0; j < clients.size(); j++) {
-
-                if (clients.get(j).getId() > id) {
-                    id = clients.get(j).getId();
-                    i = j;
-                }
-            }
-            client = clients.get(i);
+        if (wasFiend) {
+            return client;
         }
+        long id = 0;
+        int i = 0;
+
+
+        for (int j = 0; j < clients.size(); j++) {
+
+            if (clients.get(j).getId() > id) {
+                id = clients.get(j).getId();
+                i = j;
+            }
+        }
+        client = clients.get(i);
         return client;
     }
 

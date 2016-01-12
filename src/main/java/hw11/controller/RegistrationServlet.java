@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 import java.util.Locale;
 
@@ -66,6 +67,11 @@ public class RegistrationServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request,
                           HttpServletResponse response)
             throws ServletException, IOException {
+        response.setContentType("text/plain; charset=utf-8");
+        response.setCharacterEncoding("UTF-8");
+        request.setCharacterEncoding("UTF-8");
+
+        PrintWriter writer = response.getWriter();
         adminService = (AdminService) context.getBean("adminServiceImpl");
         operatorService = (OperatorService) context.getBean("operatorServiceImpl");
         clientService = (ClientService) context.getBean("clientServiceImpl");

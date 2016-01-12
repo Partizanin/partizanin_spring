@@ -13,10 +13,9 @@
     <h2 class="form-title" style="font-size: 30px">Administrators Control Panel</h2>
 
     <div class="submit-container" style="margin-right: 14px; margin-bottom:20px">
-        <input style="width: 250px;" class="submit-button" type="submit" name="button" value="Show Clients List"/>
-        <input style="width: 250px;" class="submit-button" type="submit" name="button" value="Show Operators List"/>
-        <input style="width: 250px;" class="submit-button" type="submit" name="button"
-               value="Show Administrators List"/>
+        <input style="width: 250px;" class="submit-button" type="submit" name="Show Clients List" value="Show Clients List"/>
+        <input style="width: 250px;" class="submit-button" type="submit" name="Show Operators List" value="Show Operators List"/>
+        <input style="width: 250px;" class="submit-button" type="submit" name="Show Administrators List" value="Show Administrators List"/>
     </div>
 </form>
 </body>

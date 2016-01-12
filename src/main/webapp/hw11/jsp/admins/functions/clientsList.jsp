@@ -12,8 +12,8 @@
 <html>
 <head>
     <title>Show all clients</title>
-    <link rel="stylesheet" href="<c:url value="/hw11/css/TablesClient.css"/>" type="text/css"/>
-    <link rel="shortcut icon" href="<c:url value="/images/favicon.ico"/>" type="image/ico">
+    <link rel="stylesheet" href="/hw11/css/TablesClient.css" type="text/css"/>
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/ico">
 
 </head>
 <body>
@@ -23,7 +23,7 @@
         messeg = (String) request.getAttribute("message");
     }
 %>
-<form class="form-container" action="<c:url value="/ClientTable"/>" method="post">
+<form class="form-container" action="/ClientTable" method="post">
     <table border="1" width="50%" class="rounded_edges" align="center">
         <div class="form-title"><h2 style="font-size: 40px">Client list</h2></div>
         <div>
@@ -36,7 +36,6 @@
             <th style="color: #ffa600">client_lastDate</th>
         </div>
         <tr></tr>
-        <jsp:useBean id="clientList" scope="request" type="java.util.List"/>
         <c:forEach var="client" items="${clientList}">
             <div>
                 <tr>

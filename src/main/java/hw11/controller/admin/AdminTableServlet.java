@@ -51,7 +51,7 @@ public class AdminTableServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        request.setCharacterEncoding("UTF-8");
 
         adminService = (AdminService) context.getBean("adminServiceImpl");
         adminList = adminService.findAll();
