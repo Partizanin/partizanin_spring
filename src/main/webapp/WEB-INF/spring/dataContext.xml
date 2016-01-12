@@ -40,7 +40,7 @@ http://www.springframework.org/schema/tx
             <value>
                 hibernate.dialect=org.hibernate.dialect.MySQLDialect
                 hibernate.show_sql=true
-                hibernate.hbm2ddl.auto=create<!--create//update//create-drop-->
+                hibernate.hbm2ddl.auto=update<!--create//update//create-drop-->
                 current_session_context_class=thread
             </value>
         </property>

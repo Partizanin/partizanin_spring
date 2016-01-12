@@ -2,8 +2,8 @@
 <html>
 <head>
     <title>Регистрация клиента</title>
-
-    <link rel="stylesheet" href="/hw11/css/Registration.css" type="text/css"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}hw11/css/Registration.css" type="text/css"/>
 </head>
 <body>
 <%
@@ -13,7 +13,7 @@
     }
 %>
 <%--(имя, фамилия, телефон, адрес, сумма, дата последнего заказа)--%>
-<form class="form-container" action="/Registration" method="post">
+<form class="form-container" action="${pageContext.request.contextPath}/Registration"  method="post">
     <div class="form-title"><h2 style="font-size: 40px">Registration</h2></div>
     <h2 style="color: #ff0000; font-family: Arial,serif; font-size: 20px;margin-left:1px;margin-bottom:-30px"><%=messeg%>
     </h2>

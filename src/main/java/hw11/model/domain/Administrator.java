@@ -15,9 +15,9 @@ import java.io.Serializable;
 @Table(name = "Admins")
 public class Administrator implements Serializable {
 
-    
 
-    @Id
+
+    @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "admin_id")
     private Long id;
 

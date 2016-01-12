@@ -52,7 +52,7 @@ public class OperatorTableServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        request.setCharacterEncoding("UTF-8");
         operatorService = (OperatorService) context.getBean("operatorServiceImpl");
 
         operators = operatorService.findAll();
@@ -276,21 +276,21 @@ public class OperatorTableServlet extends HttpServlet {
             }
         }
 
-        if (!wasFiend) {
-            long id = 0;
-            int i = 0;
-
-
-            for (int j = 0; j < operators.size(); j++) {
-                if (operators.get(j).getId() > id) {
-                    id = operators.get(i).getId();
-                    i = j;
-                }
-            }
-
-            operator1 = operators.get(i);
-
+        if (wasFiend) {
+            return operator1;
         }
+        long id = 0;
+        int i = 0;
+
+
+        for (int j = 0; j < operators.size(); j++) {
+            if (operators.get(j).getId() > id) {
+                id = operators.get(i).getId();
+                i = j;
+            }
+        }
+
+        operator1 = operators.get(i);
 
         return operator1;
     }
