@@ -22,7 +22,7 @@ import java.util.Locale;
 
 /**
  * Created with Intellij IDEA.
- * Project name: proff16
+ * Project name: partizanin_spring
  * User: Partizanin
  * Date: 22.07.2014
  * Time: 11:14

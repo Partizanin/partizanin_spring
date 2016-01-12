@@ -12,7 +12,7 @@ import java.util.List;
 
 /**
  * Created with Intellij IDEA.
- * Project name: proff16
+ * Project name: partizanin_spring
  * User: Partizanin
  * Date: 14.09.2014
  * Time:  13:08
