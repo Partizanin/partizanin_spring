@@ -29,11 +29,11 @@ public class Utils {
         }
         numbers.add('+');
 
-        for (char c = 'А'; c <= 'Я'; c++) {
+        for (char c = 'а'; c <= 'я'; c++) {
             rusCharacters.add(c);
         }
 
-        for (char c = 'A'; c <= 'Z'; c++) {
+        for (char c = 'a'; c <= 'z'; c++) {
             engCharacters.add(c);
         }
 
@@ -173,19 +173,24 @@ public class Utils {
         return "true";
     }
 
-    private String languageCheck(String line) {
+    public String wordCheck(String line) {
+
+        boolean badChar = false;
+        List<Character> allChars = ukrCharacters;
+        allChars.addAll(rusCharacters);
+        allChars.addAll(engCharacters);
+
+        StringBuilder badChars = new StringBuilder();
 
         for (int i = 0; i < line.length(); i++) {
-
-            if (!ukrCharacters.contains(Character.toUpperCase(line.charAt(i)))) {
-
-                if (!numbers.contains(line.charAt(i))) {
-                    return String.valueOf(line.charAt(i));
-
-                }
-
+            char currentChar = line.charAt(i);
+            if (!allChars.contains(currentChar)) {
+                badChar = true;
+                badChars.append(currentChar);
             }
-
+        }
+        if (badChar) {
+            return badChars.toString();
         }
         return "true";
     }
@@ -213,7 +218,7 @@ public class Utils {
     public class Client {
 
         public String nameSurnameCheck(String s) {
-            return languageCheck(s);
+            return wordCheck(s);
         }
 
         public String phoneNumberCheck(String s) {
@@ -265,7 +270,7 @@ public class Utils {
 
         public String loginCheck(String s) {
 
-            return languageCheck(s);
+            return wordCheck(s);
         }
 
         public String passwordCheck(String s) {
@@ -277,7 +282,7 @@ public class Utils {
 
         public String loginCheck(String s) {
 
-            return languageCheck(s);
+            return wordCheck(s);
         }
 
         public String idCheck(String s) {

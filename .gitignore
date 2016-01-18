@@ -14,7 +14,7 @@
 hs_err_pid*
 
 partizanin_spring.iml
-.iml
+*.iml
 target
 todoList.txt
 

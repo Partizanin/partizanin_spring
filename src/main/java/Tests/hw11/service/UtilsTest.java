@@ -24,6 +24,14 @@ public class UtilsTest {
     }
 
     @Test
+    public void testLanguageCheck() throws Exception {
+        Assert.assertEquals(utils.wordCheck("asdasdфывфывффівфівф"),"true");
+        Assert.assertEquals(utils.wordCheck("asdasdфывфывффівфівф123123"),"123123");
+        Assert.assertEquals(utils.wordCheck("asdasdфывфывффівфівф!`?-="),"!`?-=");
+
+    }
+
+    @Test
     public void testNumberCheck() throws Exception {
         Assert.assertEquals(utils.numberCheck("+380634401004"), "true");
         Assert.assertEquals(utils.numberCheck("380634401004"), "true");
