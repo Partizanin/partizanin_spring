@@ -232,7 +232,17 @@ public class Utils {
     }
 
     public String nameSurnameCheck(String name) {
-        return wordCheck(name);
+        String nameCheckResult = wordCheck(name);
+        switch (nameCheckResult) {
+            case "rus":
+                return "true";
+            case "ukr":
+                return "true";
+
+            case "eng":
+                return "true";
+        }
+        return nameCheckResult;
     }
 
     public String phoneNumberCheck(String phoneNumber) {

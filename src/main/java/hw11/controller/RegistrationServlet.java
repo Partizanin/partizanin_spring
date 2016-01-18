@@ -304,7 +304,7 @@ public class RegistrationServlet extends HttpServlet {
             return "Pleas input date";
         } else if (!utils.nameSurnameCheck(name).equals("true")) {
 
-            return "Bad name word " + utils.nameSurnameCheck(name).replace("false", "");
+            return "Bad name word " + utils.nameSurnameCheck(name);
 
         } else if (!utils.nameSurnameCheck(surname).equals("true")) {
 
