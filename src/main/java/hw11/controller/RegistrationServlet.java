@@ -44,9 +44,7 @@ public class RegistrationServlet extends HttpServlet {
     private List<Operator> operators;
     private List<Administrator> administrators;
 
-    /*Client: String name, String serName, String phoneNumber, String address, double summa, String lastDate
-        Operator: String login, String password, String identifyNumber
-        Admin: String login, String password, String loginAnotherAdmin*/
+
     @Override
     public void init()
             throws ServletException {
