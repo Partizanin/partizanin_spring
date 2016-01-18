@@ -15,12 +15,13 @@ public class LangChecker {
 
     private List<Word> words = new ArrayList<>();
 
-    private String checkLanguage(String word) {
+    public String checkLanguage(String word) {
         words.clear();
         StringBuilder rusWords = new StringBuilder();
         StringBuilder ukrWords = new StringBuilder();
         StringBuilder engWords = new StringBuilder();
         StringBuilder rusUkrWords = new StringBuilder();
+        StringBuilder notLangChars = new StringBuilder();
         for (int i = 0; i < word.length(); i++) {
             words.add(new Word(Character.toLowerCase(word.charAt(i))));
         }
@@ -29,7 +30,8 @@ public class LangChecker {
             String words = String.valueOf(wordsLangValue.getCharacter());
             switch (wordsLangValue.getLang()) {
                 case "notLang":
-                    return String.valueOf(wordsLangValue.getCharacter());
+                    notLangChars.append(words);
+                    break;
                 case "rus":
                     rusWords.append(words);
                     break;
@@ -43,6 +45,10 @@ public class LangChecker {
                     ukrWords.append(words);
                     break;
             }
+        }
+
+        if (notLangChars.length() != 0) {
+            return notLangChars.toString();
         }
 
         int max = getMax(ukrWords.length(), rusWords.length(), rusUkrWords.length(), engWords.length());

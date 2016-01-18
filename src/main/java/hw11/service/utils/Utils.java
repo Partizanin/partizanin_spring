@@ -2,7 +2,6 @@ package hw11.service.utils;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 /**
  * Created with Intellij IDEA.
@@ -18,6 +17,7 @@ public class Utils {
     private List<Character> ukrCharacters = new ArrayList<>();
     private List<Character> engCharacters = new ArrayList<>();
     private List<Character> numbers = new ArrayList<>();
+    private LangChecker langChecker = new LangChecker();
 
     public Utils() {
         initialize();
@@ -48,7 +48,7 @@ public class Utils {
 
     }
 
-    public String passCheck(String s) {
+    private String passCheck(String s) {
 /*пароль и его подтверждение (должен быть не менее 8 символов,
  включать большие и маленькие буквы, цифры, должен совпадать с подтверждением)*/
 
@@ -145,7 +145,7 @@ public class Utils {
         return "true";
     }
 
-    public String numberCheck(String s) {
+    private String numberCheck(String s) {
 
         if (s.length() < 9) {
 
@@ -173,9 +173,9 @@ public class Utils {
         return "true";
     }
 
-    public String wordCheck(String line) {
+    private String wordCheck(String line) {
 
-        boolean badChar = false;
+       /* boolean badChar = false;
         List<Character> allChars = ukrCharacters;
         allChars.addAll(rusCharacters);
         allChars.addAll(engCharacters);
@@ -192,132 +192,51 @@ public class Utils {
         if (badChar) {
             return badChars.toString();
         }
+        return "true";*/
+        return langChecker.checkLanguage(line);
+    }
+
+    private String idCheckImpl(String id) {
+        List<Character> idNumbers = new ArrayList<>();
+        idNumbers.addAll(numbers);
+        idNumbers.remove(numbers.size() - 1);
+        boolean badChar = false;
+        StringBuilder badChars = new StringBuilder();
+
+        for (char chars : id.toCharArray()) {
+
+            if (!idNumbers.contains(chars)) {
+                badChar = true;
+                badChars.append(chars);
+            }
+        }
+
+
+        if (badChar) {
+            return badChars.toString();
+        }
+
         return "true";
     }
 
-    public Objects idCheck(String id) {
-        return null;
+    public String idCheck(String id) {
+        return idCheckImpl(id);
     }
 
-    public Objects passwordCheck(String pass) {
-        return null;
+    public String passwordCheck(String pass) {
+        return passCheck(pass);
     }
 
-    public Objects loginCheck(String login) {
-        return null;
+    public String loginCheck(String login) {
+        return wordCheck(login);
     }
 
     public String nameSurnameCheck(String name) {
-        return null;
+        return wordCheck(name);
     }
 
     public String phoneNumberCheck(String phoneNumber) {
-        return null;
-    }
-
-    public class Client {
-
-        public String nameSurnameCheck(String s) {
-            return wordCheck(s);
-        }
-
-        public String phoneNumberCheck(String s) {
-
-            return numberCheck(s);
-        }
-
-        private String numberCheck(String s) {
-            List<Character> numbers = new ArrayList<>();
-            numbers.add('1');
-            numbers.add('2');
-            numbers.add('3');
-            numbers.add('4');
-            numbers.add('5');
-            numbers.add('6');
-            numbers.add('7');
-            numbers.add('8');
-            numbers.add('9');
-            numbers.add('0');
-            numbers.add('+');
-
-            if (s.length() < 10) {
-
-                return "number length < 10";
-            } else if (s.length() == 12) {
-
-                if (s.charAt(0) != '+') {
-                    return String.valueOf(s.charAt(0));
-                }
-            }
-
-            for (int i = 0; i < s.length(); i++) {
-
-                if (!numbers.contains(s.charAt(i))) {
-                    return String.valueOf(s.charAt(i));
-                }
-            }
-
-
-            return "true";
-        }
-
-    }
-
-    public class Admin {
-        public Admin() {
-
-        }
-
-        public String loginCheck(String s) {
-
-            return wordCheck(s);
-        }
-
-        public String passwordCheck(String s) {
-            return passCheck(s);
-        }
-    }
-
-    public class Operator {
-
-        public String loginCheck(String s) {
-
-            return wordCheck(s);
-        }
-
-        public String idCheck(String s) {
-            return numberCheck(s);
-        }
-
-        public String passwordCheck(String s) {
-
-            return passCheck(s);
-        }
-
-        private String numberCheck(String s) {
-            List<Character> numbers = new ArrayList<>();
-            numbers.add('1');
-            numbers.add('2');
-            numbers.add('3');
-            numbers.add('4');
-            numbers.add('5');
-            numbers.add('6');
-            numbers.add('7');
-            numbers.add('8');
-            numbers.add('9');
-            numbers.add('0');
-
-
-            for (int i = 0; i < s.length(); i++) {
-
-                if (!numbers.contains(s.charAt(i))) {
-                    return String.valueOf(s.charAt(i));
-                }
-            }
-
-
-            return "true";
-        }
+        return numberCheck(phoneNumber);
     }
 
     public List<Character> getEngCharacters() {

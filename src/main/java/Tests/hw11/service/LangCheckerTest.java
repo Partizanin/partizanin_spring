@@ -1,6 +1,7 @@
 package hw11.service;
 
 import hw11.service.utils.LangChecker;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -21,12 +22,12 @@ public class LangCheckerTest {
 
     @Test
     public void testCheckLanguage() throws Exception {
-     /*   Assert.assertEquals(langChecker.checkLanguage("ABC"),"eng");
+        Assert.assertEquals(langChecker.checkLanguage("ABC"),"eng");
         Assert.assertEquals(langChecker.checkLanguage("ABC1"),"1");
         Assert.assertEquals(langChecker.checkLanguage("фывыф"),"rus");
         Assert.assertEquals(langChecker.checkLanguage("фівфів"),"ukr");
         Assert.assertEquals(langChecker.checkLanguage("фівфівs"),"s");
-        Assert.assertEquals(langChecker.checkLanguage("фівфівsыаё"),"s");*/
+        Assert.assertEquals(langChecker.checkLanguage("фівфівsыаё"),"s");
     }
 
     @Test

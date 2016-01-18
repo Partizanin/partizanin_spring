@@ -24,25 +24,33 @@ public class UtilsTest {
     }
 
     @Test
+    public void testIdCheckImpl() throws Exception {
+        Assert.assertEquals(utils.idCheck("123123000984199"), "true");
+        Assert.assertEquals(utils.idCheck("123213;;';."), ";;';.");
+        Assert.assertEquals(utils.idCheck("123123+"), "+");
+
+    }
+
+    @Test
     public void testLanguageCheck() throws Exception {
-        Assert.assertEquals(utils.wordCheck("asdasdфывфывффівфівф"),"true");
-        Assert.assertEquals(utils.wordCheck("asdasdфывфывффівфівф123123"),"123123");
-        Assert.assertEquals(utils.wordCheck("asdasdфывфывффівфівф!`?-="),"!`?-=");
+        Assert.assertEquals(utils.loginCheck("asdasdфывфывффівфівф"),"asdasd");
+        Assert.assertEquals(utils.loginCheck("asdasdфывфывффівфівф123123"),"123123");
+        Assert.assertEquals(utils.loginCheck("asdasdфывфывффівфівф!`?-="),"!`?-=");
 
     }
 
     @Test
     public void testNumberCheck() throws Exception {
-        Assert.assertEquals(utils.numberCheck("+380634401004"), "true");
-        Assert.assertEquals(utils.numberCheck("380634401004"), "true");
-        Assert.assertNotEquals(utils.numberCheck("+38063422401004"),"true");
+        Assert.assertEquals(utils.phoneNumberCheck("+380634401004"), "true");
+        Assert.assertEquals(utils.phoneNumberCheck("380634401004"), "true");
+        Assert.assertNotEquals(utils.phoneNumberCheck("+38063422401004"),"true");
 
     }
 
     @Test
     public void testPassCheck() throws Exception {
-        Assert.assertEquals(utils.passCheck("123AAbvафы"),"true");
-        Assert.assertEquals(utils.passCheck("`asdioj`-0wkzcopsadjF"), "true");
+        Assert.assertEquals(utils.passwordCheck("123AAbvафы"),"true");
+        Assert.assertEquals(utils.passwordCheck("`asdioj`-0wkzcopsadjF"), "true");
 
     }
 
