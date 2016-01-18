@@ -73,36 +73,6 @@
     </table>
     <h2 style="color: #ff0000; font-size: 15px;margin-left:10px;margin-bottom:10px"><%=messeg%>
     </h2>
-    <%request.removeAttribute("message");%>
-    <%--<a href="goToServlet?param1=value1&param2=value2">Go to servlet</a>--%>
-    <%--goToServlet?param1=value1&param2=value2--%>
-
-    <%--<a href="meteridinfosuper.jsp?mid=<%=rs.getInt("meterid")%>&cid=<%=rs.getInt("consumerid")%>&cname=<%=rs.getInt("consumername")%>">
-        <%=rs.getInt("Meterid")%>
-    </a>--%>
-
-
-    <%--<tr>
-        <td><input type="submit" name="Submit" value="Update" style="background-color:#49743D;font-weight:bold;color:#ffffff;"></td>
-    </tr>--%>
-
-
-    <%-- <tr>
-    <th>ADMIN_ID</th>
-    <th>ADMIN_LOGIN</th>
-        <th>ADMIN_INVITOR</th>
-        <th >ADMIN_PASS</th>
-    </tr>
-    <tr>
-    <c:forEach var="row"  items="${adminList}">
-        <td><input type="text" readonly name="ADMIN_ID" value="${row.getId()}"></td>
-        <td><input type="text" name="ADMIN_LOGIN" value="${row.getLogin()}"></td>
-        <td><input type="text" name="ADMIN_INVITOR" value="${row.getLoginAnotherAdmin()}"></td>
-        <td><input type="text" name="ADMIN_PASS" value="${row.getPassword()}"></td>
-        <td><input type="submit" name="SubmitUpdate" value="Update" style="background-color:#028af9;font-weight:bold;color:#ffffff;"/>
-            <input type="submit" name="SubmitDelete" value="Delete" style="background-color:#ff0703;font-weight:bold;color:#ffffff;"></td>
-    </tr>
-    </c:forEach>--%>
 
 </form>
 </body>

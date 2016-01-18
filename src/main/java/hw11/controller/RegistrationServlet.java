@@ -3,7 +3,7 @@ package hw11.controller;
 import hw11.model.domain.Administrator;
 import hw11.model.domain.Client;
 import hw11.model.domain.Operator;
-import hw11.service.Utils;
+import hw11.service.utils.Utils;
 import hw11.service.admin.AdminService;
 import hw11.service.client.ClientService;
 import hw11.service.operator.OperatorService;
@@ -38,9 +38,7 @@ public class RegistrationServlet extends HttpServlet {
     private AdminService adminService;
     private OperatorService operatorService;
     private ClientService clientService;
-    private Utils.Operator operatorUtils = new Utils.Operator();
-    private Utils.Client clientUtils = new Utils.Client();
-    private Utils.Admin adminUtils = new Utils.Admin();
+    private Utils utils = new Utils();
 
     private List<Client> clients;
     private List<Operator> operators;
@@ -170,13 +168,13 @@ public class RegistrationServlet extends HttpServlet {
             return "Pleas input identification number";
         } else if (pass == null || pass.equals("")) {
             return "Pleas input password";
-        } else if (!operatorUtils.idCheck(id).equals("true")) {
-            return "Bad number identification number -->>> " + operatorUtils.idCheck(id);
-        } else if (!operatorUtils.passwordCheck(pass).equals("true")) {
-            return "Bad password number -->>> " + operatorUtils.passwordCheck(pass);
-        } else if (!operatorUtils.loginCheck(login).equals("true")) {
+        } else if (!utils.idCheck(id).equals("true")) {
+            return "Bad number identification number -->>> " + utils.idCheck(id);
+        } else if (!utils.passwordCheck(pass).equals("true")) {
+            return "Bad password number -->>> " + utils.passwordCheck(pass);
+        } else if (!utils.loginCheck(login).equals("true")) {
 
-            return operatorUtils.loginCheck(login);
+            return String.valueOf(utils.loginCheck(login));
 
         } else {
 
@@ -245,10 +243,10 @@ public class RegistrationServlet extends HttpServlet {
             return "Pleas confirm password";
         } else if (anotherLogin == null || anotherLogin.equals("")) {
             return "Pleas input another login";
-        } else if (!adminUtils.loginCheck(login).equals("true")) {
-            return "Bad login word " + adminUtils.loginCheck(login);
-        } else if (!adminUtils.passwordCheck(pass).equals("true")) {
-            return "Bad password word " + adminUtils.passwordCheck(pass);
+        } else if (!utils.loginCheck(login).equals("true")) {
+            return "Bad login word " + utils.loginCheck(login);
+        } else if (!utils.passwordCheck(pass).equals("true")) {
+            return "Bad password word " + utils.passwordCheck(pass);
         } else {
 
 
@@ -304,17 +302,17 @@ public class RegistrationServlet extends HttpServlet {
             return "Pleas input price";
         } else if (date == null || date.equals("")) {
             return "Pleas input date";
-        } else if (!clientUtils.nameSurnameCheck(name).equals("true")) {
+        } else if (!utils.nameSurnameCheck(name).equals("true")) {
 
-            return "Bad name word " + clientUtils.nameSurnameCheck(name).replace("false", "");
+            return "Bad name word " + utils.nameSurnameCheck(name).replace("false", "");
 
-        } else if (!clientUtils.nameSurnameCheck(surname).equals("true")) {
+        } else if (!utils.nameSurnameCheck(surname).equals("true")) {
 
-            return "Bad surname word " + clientUtils.nameSurnameCheck(surname).replace("false", "");
+            return "Bad surname word " + utils.nameSurnameCheck(surname).replace("false", "");
 
-        } else if (!clientUtils.phoneNumberCheck(phoneNumber).equals("true")) {
+        } else if (!utils.phoneNumberCheck(phoneNumber).equals("true")) {
 
-            return "Bad phone number word " + clientUtils.phoneNumberCheck(phoneNumber).replace("false", "");
+            return "Bad phone number word " + utils.phoneNumberCheck(phoneNumber).replace("false", "");
 
         } else {
             clients = clientService.findAll();
